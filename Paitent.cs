@@ -4,22 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assignment_1_Asp_Net
+
+namespace Assignment_1_Asp.Net
 {
     public class Patient
     {
-        private string firstName; // Private variable to store the first name of the patient
-        private string lastName; // Private variable to store the last name of the patient
-        private double weight; // Private variable to store the weight of the patient
-        private double height; // Private variable to store the height of the patient
+        private string firstName; // Stores the first name of the patient
+        private string lastName; // Stores the last name of the patient
+        private double weight; // Stores the weight of the patient in kilograms
+        private double height; // Stores the height of the patient in centimeters
 
         // Constructor to initialize the patient object with the provided information
         public Patient(string firstName, string lastName, double weight, double height)
         {
-            FirstName = firstName; // Assigning the value of the 'firstName' parameter to the FirstName property
-            LastName = lastName; // Assigning the value of the 'lastName' parameter to the LastName property
-            Weight = weight; // Assigning the value of the 'weight' parameter to the Weight property
-            Height = height; // Assigning the value of the 'height' parameter to the Height property
+            this.firstName = firstName; // Assigning the value of the 'firstName' parameter to the firstName field
+            this.lastName = lastName; // Assigning the value of the 'lastName' parameter to the lastName field
+            this.weight = weight; // Assigning the value of the 'weight' parameter to the weight field
+            this.height = height; // Assigning the value of the 'height' parameter to the height field
         }
 
         public string FirstName
@@ -46,7 +47,8 @@ namespace Assignment_1_Asp_Net
             set { height = value; } // Setter to set the value of the height field
         }
 
-        public string CalculateBP(int systolic, int diastolic)
+        // Method to calculate the patient's blood pressure category based on the provided systolic and diastolic values
+        public string CalculateBloodPressure(int systolic, int diastolic)
         {
             // Checking if either systolic or diastolic values are negative
             if (systolic < 0 || diastolic < 0)
@@ -56,55 +58,52 @@ namespace Assignment_1_Asp_Net
             // Checking if both systolic and diastolic values are within the normal range
             else if (systolic < 120 && diastolic < 80)
             {
-                return "NORMAL"; // Returning "NORMAL" if blood pressure is normal
+                return "Normal blood pressure"; // Returning "Normal blood pressure" if blood pressure is normal
             }
             // Checking if systolic value is slightly elevated and diastolic value is within the normal range
             else if (systolic < 130 && diastolic < 80)
             {
-                return "ELEVATED"; // Returning "ELEVATED" if blood pressure is slightly elevated
+                return "Elevated blood pressure"; // Returning "Elevated blood pressure" if blood pressure is slightly elevated
             }
             // Checking if systolic value is in stage 1 hypertension range or diastolic value is in stage 1 hypertension range
             else if (systolic < 140 || diastolic < 90)
             {
-                return "HIGH BLOOD PRESSURE (HYPERTENSION) STAGE 1"; // Returning stage 1 hypertension message
+                return "High blood pressure (Hypertension) - Stage 1"; // Returning stage 1 hypertension message
             }
             // Checking if systolic value is in stage 2 hypertension range or diastolic value is in stage 2 hypertension range
             else if (systolic < 180 || diastolic < 120)
             {
-                return "HIGH BLOOD PRESSURE (HYPERTENSION) STAGE 2"; // Returning stage 2 hypertension message
+                return "High blood pressure (Hypertension) - Stage 2"; // Returning stage 2 hypertension message
             }
             else
             {
-                return "HYPERTENSIVE CRISIS (consult your doctor immediately)"; // Returning hypertensive crisis message
+                return "Hypertensive crisis (Consult your doctor immediately)"; // Returning hypertensive crisis message
             }
         }
-
 
         // Method to calculate the Body Mass Index (BMI) of the patient
         public double CalculateBMI()
         {
-            double heightInMeters = Height / 100; // Convert height from centimeters to meters
-            return Weight / (heightInMeters * heightInMeters); // Calculate the BMI using the weight and height
+            double heightInMeters = height / 100; // Convert height from centimeters to meters
+            return weight / (heightInMeters * heightInMeters); // Calculate the BMI using the weight and height
         }
 
-        // Method to get the patient's information including blood pressure, BMI, and BMI status
+        // Method to get the patient's information including blood pressure category, BMI, and BMI status
         public string GetPatientInformation()
         {
-            // Calculating the blood pressure result using default values of 120 for systolic and 80 for diastolic
-            string BPResult = CalculateBP(120, 80); // Assuming default values
+            // Calculating the blood pressure category using default values of 120 for systolic and 80 for diastolic
+            string bloodPressureCategory = CalculateBloodPressure(120, 80); // Assuming default values
 
-            // Calculating the BMI result using the CalculateBMI method
-            double bmiResult = CalculateBMI();
+            // Calculating the BMI using the CalculateBMI method
+            double bmi = CalculateBMI();
 
-            // Declaring a string variable to store the BMI status
-            string bmiStatus = "";
-
-            // BMI status based on the calculated BMI result
-            if (bmiResult >= 25.0)
+            // Determining the BMI status based on the calculated BMI value
+            string bmiStatus;
+            if (bmi >= 25.0)
             {
                 bmiStatus = "Overweight";
             }
-            else if (bmiResult >= 18.5)
+            else if (bmi >= 18.5)
             {
                 bmiStatus = "Normal (In the healthy range)";
             }
@@ -113,17 +112,16 @@ namespace Assignment_1_Asp_Net
                 bmiStatus = "Underweight";
             }
 
-            // Construct the patient information string using the retrieved values
-            string patientInformation = $"Full Name: {FirstName} {LastName}\n" +
-                                        $"Weight: {Weight} KG\n" +
-                                        $"Height: {Height} CM\n" +
-                                        $"Blood Pressure: {BPResult}\n" +
-                                        $"BMI: {bmiResult}\n" +
+            // Constructing the patient information string using the retrieved values
+            string patientInformation = $"Full Name: {firstName} {lastName}\n" +
+                                        $"Weight: {weight} KG\n" +
+                                        $"Height: {height} CM\n" +
+                                        $"Blood Pressure: {bloodPressureCategory}\n" +
+                                        $"BMI: {bmi}\n" +
                                         $"BMI Status: {bmiStatus}";
 
             return patientInformation; // Return the patient information string
         }
-
     }
 }
 
