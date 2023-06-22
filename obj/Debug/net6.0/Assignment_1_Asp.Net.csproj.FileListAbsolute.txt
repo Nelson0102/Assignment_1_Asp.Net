@@ -1,0 +1,15 @@
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\bin\Debug\net6.0\Assignment_1_Asp.Net.exe
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\bin\Debug\net6.0\Assignment_1_Asp.Net.deps.json
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\bin\Debug\net6.0\Assignment_1_Asp.Net.runtimeconfig.json
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\bin\Debug\net6.0\Assignment_1_Asp.Net.dll
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\bin\Debug\net6.0\Assignment_1_Asp.Net.pdb
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\Assignment_1_Asp.Net.csproj.AssemblyReference.cache
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\Assignment_1_Asp.Net.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\Assignment_1_Asp.Net.AssemblyInfoInputs.cache
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\Assignment_1_Asp.Net.AssemblyInfo.cs
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\Assignment_1_Asp.Net.csproj.CoreCompileInputs.cache
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\Assignment_1_Asp.Net.dll
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\refint\Assignment_1_Asp.Net.dll
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\Assignment_1_Asp.Net.pdb
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\Assignment_1_Asp.Net.genruntimeconfig.cache
+C:\Users\Owner\source\repos\Assignment_1_Asp.Net\obj\Debug\net6.0\ref\Assignment_1_Asp.Net.dll
